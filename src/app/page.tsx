@@ -1,5 +1,5 @@
 import Dept from "../../public/dept_logo.svg";
-import { Activities, Activity, Weather } from "@/types";
+import { type Activities, type Activity, type Weather } from "@/types";
 import ActivityCard from "@/components/ActivityCard";
 import Content from "@/components/Content";
 import Newsletter from "@/components/Newsletter";
@@ -62,8 +62,8 @@ export default async function Home() {
   console.log(activities.activities.length);
 
   // lists of activities that can be done and that can't be done
-  let could = [] as Activity[];
-  let shouldNot = [] as Activity[];
+  const could = [] as Activity[];
+  const shouldNot = [] as Activity[];
 
   // loop over activities and put them in the right list
   activities.activities.forEach((activity) => {
@@ -124,7 +124,7 @@ export default async function Home() {
             </h3>
             {/* map over could */}
             {could.map((activity) => (
-              <ActivityCard activity={activity} />
+              <ActivityCard key={activity.title} activity={activity} />
             ))}
             <h3
               className={clsx(
@@ -136,7 +136,7 @@ export default async function Home() {
             </h3>
             {/* map over shouldNot */}
             {shouldNot.map((activity) => (
-              <ActivityCard activity={activity} />
+              <ActivityCard key={activity.title} activity={activity} />
             ))}
           </div>
         </div>

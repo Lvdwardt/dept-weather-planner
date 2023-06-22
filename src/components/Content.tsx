@@ -11,11 +11,11 @@ export default function Content() {
         DEPT® weather planner
       </h1>
       <span className="text-base/loose">
-        Picture this: an application that doesn't just tell you the weather, but
-        also helps you plan your activities around it. Imagine knowing exactly
-        the perfect day to plan that hike, or when to avoid the outdoor concert
-        due to an unexpected shower. That's exactly what the Dept Weather
-        Planner offers you.
+        Picture this: an application that doesn&apos;t just tell you the
+        weather, but also helps you plan your activities around it. Imagine
+        knowing exactly the perfect day to plan that hike, or when to avoid the
+        outdoor concert due to an unexpected shower. That&apos;s exactly what
+        the Dept Weather Planner offers you.
       </span>
       <br />
       <br />
@@ -33,19 +33,20 @@ export default function Content() {
       >
         Built with cutting-edge technologies, our weather planner brings you
         accurate, real-time weather data with a slick and user-friendly
-        interface. But it's not just a weather app; it's an intuitive daily
-        planner that syncs with the weather. With a range of activities to
+        interface. But it&apos;s not just a weather app; it&apos;s an intuitive
+        daily planner that syncs with the weather. With a range of activities to
         choose from, it suggests the best options based on current and
         forecasted weather conditions. Read lessPicture this: an application
-        that doesn't just tell you the weather, but also helps you plan your
-        activities around it. Imagine knowing exactly the perfect day to plan
-        that hike, or when to avoid the outdoor concert due to an unexpected
-        shower. That's exactly what the Dept Weather Planner offers you. Built
-        with cutting-edge technologies, our weather planner brings you accurate,
-        real-time weather data with a slick and user-friendly interface. But
-        it's not just a weather app; it's an intuitive daily planner that syncs
-        with the weather. With a range of activities to choose from, it suggests
-        the best options based on current and forecasted weather conditions.
+        that doesn&apos;t just tell you the weather, but also helps you plan
+        your activities around it. Imagine knowing exactly the perfect day to
+        plan that hike, or when to avoid the outdoor concert due to an
+        unexpected shower. That&apos;s exactly what the Dept Weather Planner
+        offers you. Built with cutting-edge technologies, our weather planner
+        brings you accurate, real-time weather data with a slick and
+        user-friendly interface. But it&apos;s not just a weather app; it&apos;s
+        an intuitive daily planner that syncs with the weather. With a range of
+        activities to choose from, it suggests the best options based on current
+        and forecasted weather conditions.
       </span>
       <br />
       <button

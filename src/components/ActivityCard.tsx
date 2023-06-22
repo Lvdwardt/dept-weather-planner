@@ -1,4 +1,4 @@
-import { Activity } from "@/types";
+import { type Activity } from "@/types";
 import Image from "next/image";
 
 export default function ActivityCard({ activity }: { activity: Activity }) {
