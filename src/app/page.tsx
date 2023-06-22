@@ -1,7 +1,9 @@
-import Image from "next/image";
 import Dept from "../../public/dept_logo.svg";
 import { Activities, Activity, Weather } from "@/types";
 import ActivityCard from "@/components/ActivityCard";
+import Content from "@/components/Content";
+import Newsletter from "@/components/Newsletter";
+import clsx from "clsx";
 
 export default async function Home() {
   // fetch the weather data
@@ -12,7 +14,7 @@ export default async function Home() {
   const { temperature, weatherInfo } = (await weather.json()) as Weather;
 
   // find the weather that matches the current temperature
-  const currentWeather = weatherInfo.find((weather) => {
+  let currentWeather = weatherInfo.find((weather) => {
     if (weather.minTemp && weather.maxTemp) {
       return (
         temperature.temp >= weather.minTemp &&
@@ -29,7 +31,12 @@ export default async function Home() {
 
   // if no weather is found, throw an error
   if (!currentWeather) {
-    throw new Error("No weather found");
+    currentWeather = {
+      title: "Something went wrong",
+      description: "Please try refreshing the page.",
+      minTemp: 0,
+      maxTemp: 0,
+    };
   }
 
   // replace the {{ CELCIUS }} placeholder with the current temperature
@@ -84,23 +91,24 @@ export default async function Home() {
   });
 
   return (
-    <div className="flex flex-col lg:flex-row">
-      <div className="h-screen w-full text-white">
-        <div className="flex h-4/5 flex-col bg-primary p-4 lg:pl-24 lg:pr-12 lg:pt-6">
+    <div className="flex max-w-[3000px] flex-col lg:flex-row">
+      <div className=" min-h-full w-full text-white lg:min-h-screen">
+        <div className="flex flex-col bg-primary p-4 lg:pl-24 lg:pr-12 lg:pt-6 xl:pl-36 2xl:pl-48">
           <div className="fill-white">
             <Dept fill="white" />
           </div>
-          <div className="mt-16 h-full w-full bg-dept-900">content</div>
+          <Content />
         </div>
 
-        <div className="mt-auto flex h-1/5 w-full bg-dept-50 p-4 text-black lg:pl-24">
-          newsletter placeholder
+        <div className="mt-auto w-full bg-dept-50 px-4 py-6 text-black lg:pl-24 xl:pl-36 2xl:pl-48">
+          <h2 className="text-xl">Want to get a daily forecast?</h2>
+          <Newsletter />
         </div>
       </div>
       <div className="h-screen w-full text-black">
-        <div className="flex h-full flex-col bg-white p-4 lg:pl-12 lg:pr-24 lg:pt-6">
+        <div className="flex h-full flex-col bg-white p-4 lg:pl-12 lg:pr-24 lg:pt-6 xl:pr-36 2xl:pr-48">
           <div className="flex flex-col gap-4 bg-secondary p-8 lg:flex-row">
-            <div className="flex items-center text-[5rem] lg:w-1/4 lg:justify-center">
+            <div className="flex min-w-min items-center text-[5rem] lg:w-1/4 lg:justify-center">
               {temp}°
             </div>
             <div className="flex flex-col lg:w-3/4">
@@ -109,12 +117,23 @@ export default async function Home() {
             </div>
           </div>
           <div className="flex flex-col pb-12">
-            <h3 className="mt-12 text-xl">Some things you could do:</h3>
+            <h3
+              className={clsx("mt-12 text-2xl", could.length === 0 && "hidden")}
+            >
+              Some things you could do:
+            </h3>
             {/* map over could */}
             {could.map((activity) => (
               <ActivityCard activity={activity} />
             ))}
-            <h3 className="mt-12 text-xl">Some things you should not do:</h3>
+            <h3
+              className={clsx(
+                "mt-12 text-2xl",
+                shouldNot.length === 0 && "hidden"
+              )}
+            >
+              Some things you should not do:
+            </h3>
             {/* map over shouldNot */}
             {shouldNot.map((activity) => (
               <ActivityCard activity={activity} />
