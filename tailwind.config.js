@@ -17,6 +17,7 @@ module.exports = {
           900: "#000000",
         },
         primary: "#5115F7",
+        secondary: "#F0EBFE",
       },
       fontFamily: {
         sans: ["var(--font-lato)"],
