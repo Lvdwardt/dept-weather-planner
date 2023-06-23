@@ -6,8 +6,8 @@ export type Weather = {
   weatherInfo: {
     title: string;
     description: string;
-    minTemp: number;
-    maxTemp: number;
+    minTemp: number | null;
+    maxTemp: number | null;
   }[];
 };
 
