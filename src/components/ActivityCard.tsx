@@ -16,8 +16,8 @@ export default function ActivityCard({ activity }: { activity: Activity }) {
   };
 
   return (
-    <div className="mt-6 flex flex-col gap-4 md:flex-row">
-      <div className=" relative h-32 w-full overflow-hidden bg-dept-100 lg:h-full lg:w-1/6">
+    <article className="mt-6 flex flex-col gap-4 md:flex-row">
+      <div className="relative h-32 w-full overflow-hidden bg-dept-100 lg:h-full lg:w-1/6">
         <Image
           alt={`${activity.title}`}
           // check if imageUrl is a number, if so, use unknown.png
@@ -33,6 +33,6 @@ export default function ActivityCard({ activity }: { activity: Activity }) {
           {activity.description}
         </p>
       </div>
-    </div>
+    </article>
   );
 }

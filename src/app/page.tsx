@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col lg:flex-row">
       <div className="min-h-full w-full text-white lg:min-h-screen lg:w-[50vw]">
-        <div className=" bg-primary p-4 lg:pl-24 lg:pr-12 lg:pt-6 xl:h-[75vh] xl:pl-36 2xl:pl-48">
+        <div className=" bg-primary p-4 lg:pl-24 lg:pr-12 lg:pt-6 xl:min-h-[75vh] xl:pl-36 2xl:pl-48">
           <div className="lg:ml-auto lg:max-w-[800px]">
             <div className="fill-white">
               <Dept fill="white" />
