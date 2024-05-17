@@ -3,7 +3,7 @@ import type { Weather, Activities, Activity } from "@/types";
 export default async function useWeather() {
   // fetch the weather data
   const weather = await fetch(
-    "https://dtnl-frontend-internship-case.vercel.app/api/get-weather",
+    "https://dtnl-frontend-case.vercel.app/api/get-weather",
     {
       cache: "no-store",
     }
@@ -51,7 +51,7 @@ export default async function useWeather() {
 
   // fetch the activities data
   const activityData = await fetch(
-    "https://dtnl-frontend-internship-case.vercel.app/api/get-activities",
+    "https://dtnl-frontend-case.vercel.app/api/get-activities",
     {
       next: {
         // only fetch this data once every 24 hours
